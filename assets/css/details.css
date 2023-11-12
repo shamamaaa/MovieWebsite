@@ -1,0 +1,99 @@
+/* Fix part */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(/assets/img/Netflix-Background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0 auto;
+}
+nav{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px 90px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #a5a5a5;
+    position: fixed;
+    z-index: 200;
+}
+
+nav .logo{
+    padding: 22px 20px;
+    height: 80px;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+nav ul{
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a{
+    line-height: 80px;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/*  */
+
+main{
+    width: 100%;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detailPage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-part{
+    border: 2px solid white;
+}
+
+.features{
+    width: 300px;
+    padding: 10px;
+}
+
+.right-part{
+padding: 10px;
+font-weight: 600;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.movieGenres{
+    color: aqua;
+}
+
+.cards{
+    background: white;
+}
+
+/* Button */

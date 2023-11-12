@@ -6,7 +6,7 @@ fetch("https://api.tvmaze.com/shows")
 .then(datas=>{
   datas.forEach(data => {
     row.innerHTML += `
-      <a href="/cardDetail" class="movieCard col-6">
+      <a href="details.html?id=${data.id}" class="movieCard col-3">
         <div class="cardImg">
           <img src="${data.image.medium}" alt="">
         </div>
@@ -28,4 +28,5 @@ fetch("https://api.tvmaze.com/shows")
   });
 
     });
+    
     
