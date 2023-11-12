@@ -19,7 +19,7 @@ nav{
     height: 100px;
     padding: 10px 90px;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     border-bottom: 1px solid #a5a5a5;
     position: fixed;
     z-index: 200;
@@ -58,8 +58,8 @@ nav ul li a{
 .movieCard {
     text-align: left;
     text-decoration: none;
-    background: white;
-    color: black;
+    background: #1d1d1d;
+    color: white;
     width: 220px !important;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0.5, 0.5, 0.5);
@@ -102,7 +102,7 @@ nav ul li a{
 
 .movieNameAndImdb > p {
     font-size: 14px;
-    background-color: yellow;
+    background-color: darkgoldenrod;
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -147,7 +147,14 @@ nav ul li a{
   font-family: Sans-serif;
 }
 
-  
 
+#load{
+margin-top: 30px;
+}
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
   

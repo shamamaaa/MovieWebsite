@@ -10,36 +10,41 @@ async function GetMoviesById(id) {
   return globalData;
 }
 
-GetMoviesData();
-
 async function GetMoviesData() {
   let movie = await GetMoviesById(id);
-  movieDetail.innerHTML = `
-      <div class="col-8 mt-5">
-      <div class="cards d-flex">
-        <div class="left-part"> 
-          <div class="image-wrapper">
+  console.log(movie);
+  movieDetail.innerHTML = `<div class="col-8 mt-5">
+            <div class="cards">
+            <div class="d-flex">
+            <div class="image-wrapper">
             <img src="${movie.image.medium}" alt="">
-          </div>
-
-          <div class="features">
-          <a href="youtube.com">
-          <button>
-          Imdb ${movie.rating.average}
-          </button>
-          </a>
-         </div>
-        </div>
-
-        <div class="right-part">
-          <h4><strong>${movie.name}</strong></h4>
-          <p>${movie.summary}</p>
-          <p>Language: ${movie.language}</p>
-          <p>Start: ${movie.premiered}</p>
-          <p>End: ${movie.ended}</p>
-          <p class="movieGenres">Genres: ${movie.genres.join(",")}</p>
-        </div>
-      </div>
-    </div>
-  `;
+            </div>
+            <div class="middle-part">
+            <h4><strong>${movie.name}</strong></h4>
+            <p>${movie.summary}</p>
+            <p class="movieGenres"><strong>Genres:</strong> ${movie.genres.join(", ")}</p>
+            </div>
+            <div class="right-part">
+            <p><strong>Language:</strong>${movie.language}</p>
+            <p><strong>Type:</strong>${movie.type}</p>
+            <p><strong>Runtime:</strong>${movie.runtime}</p>
+            <p><strong>Network:</strong>${movie.network.name}</p>
+            <p><strong>Premiered:</strong> <br>${movie.premiered}</p>
+            <p><strong>Ended:</strong> <br>${movie.ended}</p>
+            </div>
+            </div>
+            <div class="features">
+            <a href="https://www.imdb.com/title/${movie.externals.imdb}">
+            <button class="imdbBtn">
+            IMDb ${movie.rating.average}
+            </button>
+            </a>
+            <a href="${movie.officialSite}">
+            <button class="visitBtn">Visit official website</button>
+                </a>
+                </div>
+                </div>
+                </div>`;
 }
+
+GetMoviesData(); 

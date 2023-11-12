@@ -72,28 +72,70 @@ main{
 }
 
 .left-part{
-    border: 2px solid white;
+    border-radius: 10px;
 }
 
 .features{
     width: 300px;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.middle-part{
     padding: 10px;
-}
-
-.right-part{
-padding: 10px;
-font-weight: 600;
-display: flex;
-flex-direction: column;
-justify-content: center;
-}
-
-.movieGenres{
-    color: aqua;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .cards{
     background: white;
+    border-radius: 10px;
+    padding: 10px;
+    background: #1d1d1d;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    
 }
 
-/* Button */
+
+.right-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid #101010;
+    padding: 10px;
+    font-size: smaller;
+    
+}
+
+.imdbBtn {
+    width: 210px;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    background-color: #DBA506;
+
+}
+.visitBtn {
+    width: 615px;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.imdbBtn:hover {
+    background-color: #f2db83;
+}
+
+.visitBtn:hover{
+    background-color: #d1d1d1;
+}
