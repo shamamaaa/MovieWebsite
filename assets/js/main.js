@@ -1,5 +1,6 @@
 var row=document.querySelector(".movieCards")
 var loadbtn=document.getElementById("load")
+var searchBox= document.getElementById("searchbox")
 var limit = 15;
 
 
@@ -34,8 +35,6 @@ const getMovies=()=>{
     }
     
   });
-  
-  
 }
 getMovies()
 
@@ -44,3 +43,49 @@ loadbtn.addEventListener("click", function() {
   getMovies()
   
 });
+
+
+searchBox.addEventListener("input", (e) => {
+  e.preventDefault();
+   
+  if (searchBox.value.length==0) {
+    getMovies()
+  } 
+  else {   
+    fetch("https://api.tvmaze.com/shows")
+    .then((response)=> response.json())
+    .then((data)=>{
+      let foundArr = data.filter((item)=>
+      item.name
+      .toLowerCase()
+      .trim()
+      .includes(searchBox.value.trim().toLowerCase())
+      );
+      row.innerHTML= ""
+      foundArr.forEach((item)=>{
+        row.innerHTML += `
+        <a href="details.html?id=${item.id}" class="movieCard col-3">
+        <div class="cardImg">
+        <img src="${item.image.medium}" alt="">
+        </div>
+        <div class="overlay">
+        <span>Details...</span>
+        </div>
+        <div class="cardContent">
+        <div class="movieNameAndImdb">
+        <h2>${item.name}</h2>
+        <p>${item.rating.average}/10</p>
+        </div>
+        <div class="movieDateTime">
+        <p class="date"><strong>Day:</strong> ${item.schedule.days}</p>
+        <p class="date"><strong>Time:</strong> ${item.schedule.time}</p>
+        </div>
+        </div>
+        </a>
+        `;
+      })
+    })
+  }
+  })
+  
+  
